@@ -9,15 +9,15 @@ const Header = () => {
   return (
     <header className="bg-white shadow-md relative">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="text-xl md:text-2xl font-bold text-blue-600">
-          <Link href="/">SMA Negeri 1 Harapan</Link>
+        <div className="text-xl md:text-2xl font-bold text-teal-600">
+          <Link href="/">SMP ISLAM HEGARMANAH</Link>
         </div>
         <nav className="hidden md:flex space-x-6">
-          <Link href="/" className="text-gray-600 hover:text-blue-600">Beranda</Link>
-          <Link href="/tentang" className="text-gray-600 hover:text-blue-600">Tentang Kami</Link>
-          <Link href="/akademik" className="text-gray-600 hover:text-blue-600">Akademik</Link>
-          <Link href="/penerimaan" className="text-gray-600 hover:text-blue-600">Penerimaan</Link>
-          <Link href="/kontak" className="text-gray-600 hover:text-blue-600">Kontak</Link>
+          <Link href="/" className="text-gray-600 hover:text-teal-600">Beranda</Link>
+          <Link href="/tentang" className="text-gray-600 hover:text-teal-600">Tentang Kami</Link>
+          <Link href="/akademik" className="text-gray-600 hover:text-teal-600">Akademik</Link>
+          <Link href="/penerimaan" className="text-gray-600 hover:text-teal-600">Penerimaan</Link>
+          <Link href="/kontak" className="text-gray-600 hover:text-teal-600">Kontak</Link>
         </nav>
         <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {/* Mobile menu icon */}
@@ -30,11 +30,11 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white absolute w-full shadow-md">
           <nav className="flex flex-col p-4 space-y-2">
-            <Link href="/" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Beranda</Link>
-            <Link href="/tentang" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Tentang Kami</Link>
-            <Link href="/akademik" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Akademik</Link>
-            <Link href="/penerimaan" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Penerimaan</Link>
-            <Link href="/kontak" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Kontak</Link>
+            <Link href="/" className="text-gray-600 hover:text-teal-600 py-2" onClick={() => setIsMenuOpen(false)}>Beranda</Link>
+            <Link href="/tentang" className="text-gray-600 hover:text-teal-600 py-2" onClick={() => setIsMenuOpen(false)}>Tentang Kami</Link>
+            <Link href="/akademik" className="text-gray-600 hover:text-teal-600 py-2" onClick={() => setIsMenuOpen(false)}>Akademik</Link>
+            <Link href="/penerimaan" className="text-gray-600 hover:text-teal-600 py-2" onClick={() => setIsMenuOpen(false)}>Penerimaan</Link>
+            <Link href="/kontak" className="text-gray-600 hover:text-teal-600 py-2" onClick={() => setIsMenuOpen(false)}>Kontak</Link>
           </nav>
         </div>
       )}
