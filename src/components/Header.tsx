@@ -1,4 +1,4 @@
-'use client'; // This is a client component because it uses useState
+'use client';
 
 import Link from 'next/link';
 import { useState } from 'react';
@@ -6,59 +6,94 @@ import { useState } from 'react';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const navLinks = [
+    { href: '/', label: 'Beranda' },
+    { href: '/profil', label: 'Profil' },
+    { href: '/kurikulum', label: 'Kurikulum' },
+    { href: '/program-sekolah', label: 'Program Sekolah' },
+    { href: '/gtk', label: 'GTK' },
+    { href: '/kesiswaan', label: 'Kesiswaan' },
+    { href: '/sarana-prasarana', label: 'Sarana Prasarana' },
+    { href: '/hubungan-industri', label: 'Hubungan Industri' },
+    { href: '/fitur', label: 'Fitur' },
+    { href: '/inovasi-sekolah', label: 'Inovasi Sekolah' },
+    { href: '/jurusan', label: 'Jurusan' },
+    { href: '/kontak', label: 'Kontak' },
+    { href: '/ppdb', label: 'PPDB' },
+  ];
+
   return (
-    <header className="bg-white shadow-md relative">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <img src="https://www.smkn1-cmi.sch.id/wp-content/uploads/2023/05/SMK_Negeri_1_Cimahi-2.png" alt="SMK Negeri 1 Cimahi" className="h-12 mr-4" />
-          <div>
-            <h1 className="text-xl font-bold text-blue-900">SMK Negeri 1 Cimahi</h1>
-            <p className="text-sm text-gray-600">SMK Unggulan yang Menghasilkan SDM Bermutu dan Berdaya Saing Tinggi</p>
+    <header className="bg-slate-50/90 shadow-sm sticky top-0 z-50 backdrop-blur-md">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <Link href="/" className="flex items-center gap-3">
+              <img
+                src="https://www.smkn1-cmi.sch.id/wp-content/uploads/2023/05/SMK_Negeri_1_Cimahi-2.png"
+                alt="SMK Negeri 1 Cimahi Logo"
+                className="h-14 w-auto"
+              />
+              <div className="flex flex-col">
+                <h1 className="text-lg font-bold text-slate-800 tracking-tight">
+                  SMK Negeri 1 Cimahi
+                </h1>
+                <p className="text-xs text-slate-500 font-medium">
+                  Unggul, Bermutu, dan Berdaya Saing Tinggi
+                </p>
+              </div>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navLinks.slice(0, 7).map(link => (
+              <Link key={link.href} href={link.href} className="text-slate-700 hover:bg-slate-200/70 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                {link.label}
+              </Link>
+            ))}
+             {/* Simple dropdown for more links */}
+            <div className="relative group">
+                <button className="text-slate-700 hover:bg-slate-200/70 px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                    Lainnya <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20 hidden group-hover:block">
+                    {navLinks.slice(7).map(link => (
+                        <Link key={link.href} href={link.href} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100">
+                            {link.label}
+                        </Link>
+                    ))}
+                </div>
+            </div>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-md text-slate-700 hover:bg-slate-200/70 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-slate-400"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
+              </svg>
+            </button>
           </div>
         </div>
-        <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {/* Mobile menu icon */}
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-        </button>
       </div>
-      <nav className="hidden md:flex bg-blue-800 text-white">
-        <div className="container mx-auto px-4">
-            <div className="flex justify-center space-x-4 py-2">
-                <Link href="/" className="hover:bg-blue-700 px-3 py-2 rounded">Beranda</Link>
-                <Link href="/profil" className="hover:bg-blue-700 px-3 py-2 rounded">Profil</Link>
-                <Link href="/kurikulum" className="hover:bg-blue-700 px-3 py-2 rounded">Kurikulum</Link>
-                <Link href="/program-sekolah" className="hover:bg-blue-700 px-3 py-2 rounded">Program Sekolah</Link>
-                <Link href="/gtk" className="hover:bg-blue-700 px-3 py-2 rounded">GTK</Link>
-                <Link href="/kesiswaan" className="hover:bg-blue-700 px-3 py-2 rounded">Kesiswaan</Link>
-                <Link href="/sarana-prasarana" className="hover:bg-blue-700 px-3 py-2 rounded">Sarana Prasarana</Link>
-                <Link href="/hubungan-industri" className="hover:bg-blue-700 px-3 py-2 rounded">Hubungan Industri</Link>
-                <Link href="/fitur" className="hover:bg-blue-700 px-3 py-2 rounded">Fitur</Link>
-                <Link href="/inovasi-sekolah" className="hover:bg-blue-700 px-3 py-2 rounded">Inovasi Sekolah</Link>
-                <Link href="/jurusan" className="hover:bg-blue-700 px-3 py-2 rounded">Jurusan</Link>
-                <Link href="/kontak" className="hover:bg-blue-700 px-3 py-2 rounded">Kontak</Link>
-                <Link href="/ppdb" className="hover:bg-blue-700 px-3 py-2 rounded">PPDB</Link>
-            </div>
-        </div>
-      </nav>
+
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white absolute w-full shadow-md">
-          <nav className="flex flex-col p-4 space-y-2">
-            <Link href="/" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Beranda</Link>
-            <Link href="/profil" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Profil</Link>
-            <Link href="/kurikulum" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Kurikulum</Link>
-            <Link href="/program-sekolah" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Program Sekolah</Link>
-            <Link href="/gtk" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>GTK</Link>
-            <Link href="/kesiswaan" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Kesiswaan</Link>
-            <Link href="/sarana-prasarana" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Sarana Prasarana</Link>
-            <Link href="/hubungan-industri" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Hubungan Industri</Link>
-            <Link href="/fitur" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Fitur</Link>
-            <Link href="/inovasi-sekolah" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Inovasi Sekolah</Link>
-            <Link href="/jurusan" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Jurusan</Link>
-            <Link href="/kontak" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>Kontak</Link>
-            <Link href="/ppdb" className="text-gray-600 hover:text-blue-600 py-2" onClick={() => setIsMenuOpen(false)}>PPDB</Link>
+        <div className="lg:hidden bg-slate-50/95 absolute w-full shadow-lg backdrop-blur-md">
+          <nav className="flex flex-col px-4 pt-2 pb-4 space-y-1">
+            {navLinks.map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-200/70"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
         </div>
       )}
