@@ -1,0 +1,887 @@
+/* Global Styles */
+:root {
+    --primary-color: #047857; /* Green */
+    --secondary-color: #f0fdf4; /* Light Green */
+    --accent-color: #fbbf24; /* Yellow */
+    --text-color: #334155; /* Dark Slate */
+    --heading-color: #1e293b; /* Darker Slate */
+    --bg-color: #ffffff;
+    --surface-color: #f8fafc;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+header nav .logo img {
+    height: 40px;
+}
+
+header nav ul {
+    display: none; /* Hidden on mobile */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+header nav ul.active {
+    display: flex;
+}
+
+header nav ul li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+header nav ul li a {
+    padding: 1rem;
+    display: block;
+}
+
+header nav ul li a {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #059669;
+    color: #fff;
+}
+
+.hamburger {
+    display: block; /* Shown on mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hero Section */
+#hero {
+    background-image: url('https://placehold.co/1920x1080/dcfce7/333?text=Gedung+Sekolah');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 6rem 0;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons .cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+/* Sambutan Section */
+#sambutan .sambutan-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+#sambutan .sambutan-img img {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* Program Unggulan Section */
+#program-unggulan {
+    background-color: var(--surface-color);
+}
+.program-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.program-cards .card {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.program-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.program-cards .card i {
+    color: var(--primary-color);
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+}
+
+/* Berita Section */
+.berita-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.card-berita {
+    background: var(--bg-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+.card-berita img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card-berita-content {
+    padding: 1.5rem;
+}
+.card-berita .kategori {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.card-berita h3 {
+    margin: 1rem 0;
+}
+
+/* Galeri Section */
+#galeri {
+    background-color: var(--surface-color);
+}
+.galeri-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.galeri-grid img {
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+.galeri-grid img:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+.galeri-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Testimoni Section */
+.testimoni-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.card-testimoni {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 5px solid var(--primary-color);
+}
+.testimoni-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.testimoni-profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* Footer */
+footer {
+    background-color: var(--heading-color);
+    color: #e2e8f0;
+    padding: 4rem 0 2rem;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+footer h4 {
+    color: #fff;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+footer a {
+    color: #e2e8f0;
+}
+.social-icons a {
+    margin-right: 1rem;
+}
+.copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #475569;
+    font-size: 0.9rem;
+}
+
+/* ---- Media Queries (Desktop) ---- */
+@media (min-width: 768px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    header nav ul {
+        display: flex;
+        gap: 1rem;
+    }
+
+    #sambutan .sambutan-content {
+        flex-direction: row;
+        gap: 3rem;
+    }
+    #sambutan .sambutan-img {
+        flex-basis: 40%;
+    }
+    #sambutan .sambutan-text {
+        flex-basis: 60%;
+    }
+
+    .program-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .berita-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .galeri-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .testimoni-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .program-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ---- Page Specific Styles: Profil ---- */
+
+/* Page Banner */
+.page-banner {
+    padding: 4rem 0;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+.page-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.page-banner h1 {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+/* Visi Misi Section */
+#visi-misi {
+    background-color: var(--surface-color);
+}
+.visi-misi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.misi ul {
+    list-style: none;
+    padding: 0;
+}
+.misi li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+.misi li::before {
+    content: '✔';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Tenaga Pendidik Section */
+#tenaga-pendidik {
+    background-color: var(--surface-color);
+}
+.pendidik-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+.card-pendidik {
+    text-align: center;
+}
+.card-pendidik img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.card-pendidik h4 {
+    margin-bottom: 0.25rem;
+}
+.card-pendidik p {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Responsive adjustments for new sections */
+@media (min-width: 768px) {
+    .visi-misi-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    .pendidik-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ---- Page Specific Styles: Akademik ---- */
+
+#program-unggulan-detail, #fasilitas {
+    background-color: var(--surface-color);
+}
+
+.program-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.program-detail-item {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.program-detail-item i {
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+.ekskul-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.ekskul-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.ekskul-item i {
+    color: var(--primary-color);
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.ekskul-item h4 {
+    margin: 0 0 0.25rem 0;
+}
+
+.ekskul-item p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.fasilitas-galeri {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.fasilitas-item {
+    text-align: center;
+}
+
+.fasilitas-item img {
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Responsive for Akademik */
+@media (min-width: 768px) {
+    .program-detail-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .ekskul-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .fasilitas-galeri {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ---- Page Specific Styles: Berita Arsip ---- */
+
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.berita-cards-full {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* Sidebar */
+.sidebar .widget {
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.sidebar .widget-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-form input {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem;
+    border-radius: 8px 0 0 8px;
+}
+
+.search-form button {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 0 1rem;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-list li a {
+    display: block;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    color: var(--text-color);
+}
+.category-list li:last-child a {
+    border-bottom: none;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+}
+
+.page-link {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: var(--primary-color);
+}
+
+.page-link.current, .page-link:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+/* Responsive for Berita Arsip */
+@media (min-width: 768px) {
+    .berita-cards-full {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-content-grid {
+        grid-template-columns: 3fr 1fr; /* 3 parts for main content, 1 for sidebar */
+    }
+}
+
+/* ---- Page Specific Styles: Berita Detail ---- */
+
+.article-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.article-meta i {
+    width: 16px;
+    height: 16px;
+}
+
+.article-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.article-content blockquote {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--surface-color);
+    border-left: 5px solid var(--primary-color);
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.share-buttons {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+}
+.share-btn.facebook { background-color: #1877F2; }
+.share-btn.twitter { background-color: #1DA1F2; }
+.share-btn.whatsapp { background-color: #25D366; }
+.share-btn:hover {
+    opacity: 0.9;
+    color: #fff;
+}
+
+
+.recent-posts {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-posts li {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+.recent-posts li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.recent-posts a {
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+.recent-posts .post-date {
+    display: block;
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+@media (min-width: 768px) {
+    .article-header h1 {
+        font-size: 2.8rem;
+    }
+}
+
+/* ---- Page Specific Styles: Galeri ---- */
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background-color: #f1f5f9;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.galeri-full-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.galeri-item {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.galeri-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeri-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Lightbox/Modal */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Responsive for Gallery */
+@media (min-width: 768px) {
+    .galeri-full-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .galeri-full-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
