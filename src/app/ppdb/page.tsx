@@ -1,10 +1,10 @@
-const AkademikPage = () => {
+const PpdbPage = () => {
   return (
     <div className="container mx-auto px-4 py-8" style={{minHeight: '60vh'}}>
-      <h1 className="text-3xl font-bold">Akademik</h1>
+      <h1 className="text-3xl font-bold">PPDB</h1>
       <p>This page is under construction.</p>
     </div>
   );
 };
 
-export default AkademikPage;
+export default PpdbPage;
