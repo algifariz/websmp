@@ -38,5 +38,5 @@
     "**/*.js",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "js_old", "css_old", "pages_old"]
 }
