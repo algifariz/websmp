@@ -3,144 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontak - SMP Islam Hasanah</title>
+    <title>Kontak - SMK Negeri 1 Cimahi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-
-    <header>
-        <nav class="container">
-            <a href="../" class="logo">
-                <img src="https://placehold.co/150x50/e2e8f0/e2e8f0?text=Logo+Sekolah" alt="Logo SMP Islam Hasanah">
-            </a>
-            <ul>
-                <li><a href="../">Beranda</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="akademik.html">Akademik</a></li>
-                <li><a href="berita.html">Berita</a></li>
-                <li><a href="galeri.html">Galeri</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-            <a href="#" class="cta-button">Pendaftaran PPDB</a>
-            <button class="hamburger">
-                <i data-lucide="menu"></i>
-            </button>
-        </nav>
-    </header>
-
-    <main>
-        <section class="page-banner" style="background-image: url('https://placehold.co/1920x500/dcfce7/333?text=Hubungi+Kami');">
+    <header class="site-header">
+        <!-- Top Bar -->
+        <div class="top-bar">
             <div class="container">
-                <h1>Hubungi Kami</h1>
-            </div>
-        </section>
-
-        <section id="kontak-info">
-            <div class="container">
-                <div class="kontak-grid">
-                    <div class="kontak-details">
-                        <h2>Informasi Kontak</h2>
-                        <p>Kami senang mendengar dari Anda. Silakan hubungi kami melalui informasi di bawah ini atau isi formulir di samping.</p>
-                        <ul class="info-list">
-                            <li>
-                                <i data-lucide="map-pin"></i>
-                                <div>
-                                    <h4>Alamat</h4>
-                                    <p>Jl. Pendidikan No. 1, Kota Harapan, Indonesia</p>
-                                </div>
-                            </li>
-                            <li>
-                                <i data-lucide="mail"></i>
-                                <div>
-                                    <h4>Email</h4>
-                                    <p>info@smpislamhasanah.sch.id</p>
-                                </div>
-                            </li>
-                            <li>
-                                <i data-lucide="phone"></i>
-                                <div>
-                                    <h4>Telepon</h4>
-                                    <p>(021) 123-4567</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="map-placeholder">
-                            <img src="https://placehold.co/600x450/e2e8f0/333?text=Peta+Lokasi+Google+Maps" alt="Peta Lokasi">
-                        </div>
-                    </div>
-                    <div class="kontak-form">
-                        <h2>Kirim Pesan</h2>
-                        <form action="#" method="POST">
-                            <div class="form-group">
-                                <label for="nama">Nama Lengkap</label>
-                                <input type="text" id="nama" name="nama" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Alamat Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subjek">Subjek</label>
-                                <input type="text" id="subjek" name="subjek" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="pesan">Pesan Anda</label>
-                                <textarea id="pesan" name="pesan" rows="6" required></textarea>
-                            </div>
-                            <button type="submit" class="cta-button">Kirim Pesan</button>
-                        </form>
+                <div class="top-bar-left">
+                    <span class="current-date">Kam, 4 September 2025</span>
+                </div>
+                <div class="top-bar-right">
+                    <a href="tel:022-6629683"><i class="fas fa-phone"></i> (022)-6629683</a>
+                    <a href="mailto:info@smkn1-cmi.sch.id"><i class="fas fa-envelope"></i> info@smkn1-cmi.sch.id</a>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
 
-    <footer>
+        <!-- Main Header -->
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="https://placehold.co/250x60/e2e8f0/333?text=Logo+SMKN+1+Cimahi" alt="Logo SMKN 1 Cimahi">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Beranda</a></li>
+                        <li class="has-dropdown">
+                            <a href="profil.html">Profil</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Sejarah Singkat</a></li>
+                                <li><a href="#">Visi dan Misi</a></li>
+                                <li><a href="#">Struktur Organisasi</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="kurikulum.html">Kurikulum</a>
+                             <ul class="dropdown">
+                                <li><a href="#">Info Kurikulum</a></li>
+                                <li><a href="#">Program Keahlian</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Program Sekolah</a></li>
+                        <li><a href="#">Kesiswaan</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                         <li><a href="#">PPDB</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+    <main class="page-content">
+        <div class="container">
+            <h1>Hubungi Kami</h1>
+            <div class="entry-content">
+                <p>Jika Anda memiliki pertanyaan, silakan hubungi kami melalui detail di bawah ini.</p>
+                <ul>
+                    <li><strong>Alamat:</strong> Jl. Mahar Martanegara No.48, Utama, Kec. Cimahi Sel., Kota Cimahi, Jawa Barat 40521</li>
+                    <li><strong>Telepon:</strong> (022)-6629683</li>
+                    <li><strong>Email:</strong> info@smkn1-cmi.sch.id</li>
+                </ul>
+                 <div class="map-placeholder" style="margin-top: 2rem;">
+                    <img src="https://placehold.co/800x450/e2e8f0/333?text=Peta+Lokasi" alt="Peta Lokasi">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <img src="https://placehold.co/150x50/e2e8f0/e2e8f0?text=Logo+Sekolah" alt="Logo SMP Islam Hasanah">
-                    <p>Sekolah modern yang berlandaskan nilai-nilai Islam untuk mencetak generasi masa depan yang cemerlang.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Tautan Cepat</h4>
-                    <ul>
-                        <li><a href="../">Beranda</a></li>
-                        <li><a href="profil.html">Profil</a></li>
-                        <li><a href="akademik.html">Akademik</a></li>
-                        <li><a href="berita.html">Berita</a></li>
-                        <li><a href="galeri.html">Galeri</a></li>
-                        <li><a href="kontak.html">Kontak</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Kontak Kami</h4>
-                    <p>Jl. Pendidikan No. 1, Kota Harapan, Indonesia</p>
-                    <p>Email: info@smpislamhasanah.sch.id</p>
-                    <p>Telepon: (021) 123-4567</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Media Sosial</h4>
-                    <div class="social-icons">
-                        <a href="#"><i data-lucide="instagram"></i></a>
-                        <a href="#"><i data-lucide="facebook"></i></a>
-                        <a href="#"><i data-lucide="youtube"></i></a>
+                <!-- Column 1: About -->
+                <div class="footer-widget">
+                    <img src="https://placehold.co/200x50/e2e8f0/333?text=Logo+Putih" alt="Logo Footer" class="footer-logo">
+                    <p>SMK Unggulan yang Menghasilkan SDM Bermutu dan Berdaya Saing Tinggi.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
+                <!-- Column 2: Recent Posts -->
+                <div class="footer-widget">
+                    <h4 class="widget-title">Postingan Terbaru</h4>
+                    <ul class="recent-posts-footer">
+                        <li><a href="#">SMK Negeri 1 Cimahi Catat 77 Siswa Lolos SNPMB 2025</a></li>
+                        <li><a href="#">SMKN 1 Cimahi Bekerja Sama dengan PT. Novoleum</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Categories -->
+                <div class="footer-widget">
+                    <h4 class="widget-title">Kategori</h4>
+                    <ul>
+                        <li><a href="#">Berita Sekolah</a></li>
+                        <li><a href="#">Kesiswaan</a></li>
+                        <li><a href="#">Kurikulum</a></li>
+                        <li><a href="#">Prestasi Siswa</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4: Contact -->
+                 <div class="footer-widget">
+                    <h4 class="widget-title">Hubungi Kami</h4>
+                    <p>Jl. Mahar Martanegara No.48, Utama, Kec. Cimahi Sel., Kota Cimahi, Jawa Barat 40521</p>
+                    <p>(022)-6629683</p>
+                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 SMP Islam Hasanah. Semua Hak Cipta Dilindungi.</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© Copyright - Tim ICT SMK Negeri 1 Cimahi 2025 | Design By: Jules</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        lucide.createIcons();
-    </script>
     <script src="../js/main.js"></script>
 </body>
 </html>
